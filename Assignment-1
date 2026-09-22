@@ -1,0 +1,41 @@
+#include <iostream>
+
+using namespace std;
+
+class book
+{
+public:
+    int id;
+    string book_name;
+    string author;
+    int price;
+
+    void display()
+    {
+        cout << "Name of the book = " << book_name << endl;
+        cout << "Book ID = " << id << endl;
+        cout << "Price of the book = " << price << endl;
+        cout << "Name of the author = " << author << endl;
+    }
+};
+
+int main()
+{
+    book b1;
+
+    cout << "Enter name of book: ";
+    cin >> b1.book_name;
+
+    cout << "Enter book id: ";
+    cin >> b1.id;
+
+    cout << "Enter price: ";
+    cin >> b1.price;
+
+    cout << "Enter name of author: ";
+    cin >> b1.author;
+
+    b1.display();
+
+    return 0;
+}.
