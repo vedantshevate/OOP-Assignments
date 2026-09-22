@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+class employee
+{
+public:
+    int empid;
+    string name;
+    string department;
+
+    void input()
+    {
+        cout << "Enter Employee Name: ";
+        cin >> name;
+
+        cout << "Enter Employee ID: ";
+        cin >> empid;
+
+        cout << "Enter Department: ";
+        cin >> department;
+    }
+
+    void display()
+    {
+        cout << "\n------- Employee Details -------" << endl;
+        cout << "Employee Name: " << name << endl;
+        cout << "Employee ID: " << empid << endl;
+        cout << "Department: " << department << endl;
+    }
+};
+
+int main()
+{
+    employee e1;
+
+    e1.input();
+
+    e1.display();
+
+    return 0;
+}
