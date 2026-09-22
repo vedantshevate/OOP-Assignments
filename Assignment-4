@@ -1,0 +1,53 @@
+#include <iostream>
+
+using namespace std;
+
+class book
+{
+public:
+    int id;
+    string name;
+    string author;
+    int price;
+
+    book()
+    {
+        id = 0;
+        name = "Not Available";
+        author = "Not Available";
+        price = 0;
+    }
+
+    book(int i, string n, string a, int p)
+    {
+        id = i;
+        name = n;
+        author = a;
+        price = p;
+    }
+
+    void display()
+    {
+        cout << "------- Book Details -------" << endl;
+        cout << "Name: " << name << endl;
+        cout << "Book ID: " << id << endl;
+        cout << "Author: " << author << endl;
+        cout << "Price: " << price << endl;
+    }
+};
+
+int main()
+{
+    book b1;
+    book b2(101, "Wings of Fire", "Sutherland", 500);
+
+    cout << "Default Book:" << endl;
+    b1.display();
+
+    cout << endl;
+
+    cout << "Book With Complete Details:" << endl;
+    b2.display();
+
+    return 0;
+}
