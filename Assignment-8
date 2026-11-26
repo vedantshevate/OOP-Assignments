@@ -1,0 +1,66 @@
+
+#include <iostream>
+using namespace std;
+
+class Person {
+protected:
+    string name;
+    int age;
+
+public:
+    void setPersonDetails(string n, int a) {
+        name = n;
+        age = a;
+    }
+
+    void displayPersonDetails() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+    }
+};
+
+class Employee : public Person {
+protected:
+    int employeeID;
+    float salary;
+
+public:
+    void setEmployeeDetails(int id, float s) {
+        employeeID = id;
+        salary = s;
+    }
+
+    void displayEmployeeDetails() {
+        displayPersonDetails();
+        cout << "Employee ID: " << employeeID << endl;
+        cout << "Salary: " << salary << endl;
+    }
+};
+
+class Manager : public Employee {
+private:
+    string department;
+
+public:
+    void setManagerDetails(string d) {
+        department = d;
+    }
+
+    void displayManagerDetails() {
+        displayEmployeeDetails();
+        cout << "Department: " << department << endl;
+    }
+};
+
+int main() {
+    Manager m1;
+
+    m1.setPersonDetails("Vedant", 30);
+    m1.setEmployeeDetails(101, 50000);
+    m1.setManagerDetails("IT Department");
+
+    cout << "Manager Information" << endl;
+    m1.displayManagerDetails();
+
+    return 0;
+}
