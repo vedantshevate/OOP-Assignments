@@ -1,0 +1,71 @@
+
+#include <iostream>
+using namespace std;
+
+class Vehicle {
+protected:
+    string brand;
+    int speed;
+
+public:
+    void setVehicleDetails(string b, int s) {
+        brand = b;
+        speed = s;
+    }
+
+    void displayVehicleDetails() {
+        cout << "Brand: " << brand << endl;
+        cout << "Speed: " << speed << " km/h" << endl;
+    }
+};
+
+class Car : public Vehicle {
+private:
+    int doors;
+
+public:
+    void setCarDetails(int d) {
+        doors = d;
+    }
+
+    void displayCarDetails() {
+        displayVehicleDetails();
+        cout << "Number of Doors: " << doors << endl;
+    }
+};
+
+class Bike : public Vehicle {
+private:
+    int mileage;
+
+public:
+    void setBikeDetails(int m) {
+        mileage = m;
+    }
+
+    void displayBikeDetails() {
+        displayVehicleDetails();
+        cout << "Mileage: " << mileage << " km/l" << endl;
+    }
+};
+
+int main() {
+    Car c1;
+    Bike b1;
+
+    // Car details
+    c1.setVehicleDetails("Toyota", 180);
+    c1.setCarDetails(4);
+
+    // Bike details
+    b1.setVehicleDetails("Honda", 120);
+    b1.setBikeDetails(50);
+
+    cout << "Car Information" << endl;
+    c1.displayCarDetails();
+
+    cout << "\nBike Information" << endl;
+    b1.displayBikeDetails();
+
+    return 0;
+}
