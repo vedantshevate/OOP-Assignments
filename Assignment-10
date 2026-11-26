@@ -1,0 +1,25 @@
+
+#include <iostream>
+using namespace std;
+
+template <class T>
+T findLarger(T a, T b) {
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+
+int main() {
+
+    int x = 10, y = 20;
+    cout << "Larger integer: " << findLarger(x, y) << endl;
+
+    float p = 12.5, q = 8.5;
+    cout << "Larger float: " << findLarger(p, q) << endl;
+
+    double m = 45.67, n = 56.78;
+    cout << "Larger double: " << findLarger(m, n) << endl;
+
+    return 0;
+}
